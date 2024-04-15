@@ -1,317 +1,153 @@
-Markdown to HTML
-Python
-HTML
- By: Guillaume, CTO at Holberton School
+Fun with CSS
+CSS
+Front-end
  Weight: 1
- Project will start Mar 18, 2024 6:00 AM, must end by Mar 25, 2024 6:00 AM
- Checker will be released at Mar 20, 2024 12:00 AM
- An auto review will be launched at the deadline
-Description
-Markdown is awesome! All your README.md are made in Markdown, but do you know how GitHub are rendering them?
+ Project will start Apr 15, 2024 6:00 AM, must end by Apr 22, 2024 6:00 AM
+ Manual QA review must be done (request it when you are done with the project)
+In this project, you will experiment and implement fun layout with HTML and CSS ONLY!
 
-It’s time to code a Markdown to HTML!
+Yes, no JavaScript!
 
-Requirements
-All your files will be interpreted/compiled on Ubuntu 18.04 LTS using python3 (version 3.7 or higher)
-The first line of all your files should be exactly #!/usr/bin/python3
-A README.md file, at the root of the folder of the project, is mandatory
-Your code should use the PEP 8 style (version 1.7.*)
-All your files must be executable
-All your modules should be documented: python3 -c 'print(__import__("my_module").__doc__)'
-Your code should not be executed when imported (by using if __name__ == "__main__":)
+Enjoy!
+
 Tasks
-0. Start a script
+0. Sprite languages
 #advanced
-Write a script markdown2html.py that takes an argument 2 strings:
+By using this HTML:
 
-First argument is the name of the Markdown file
-Second argument is the output file name
-Requirements:
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>HBTN - 0- Sprite</title>
 
-If the number of arguments is less than 2: print in STDERR Usage: ./markdown2html.py README.md README.html and exit 1
-If the Markdown file doesn’t exist: print in STDER Missing <filename> and exit 1
-Otherwise, print nothing and exit 0
-guillaume@vagrant:~/$ ./markdown2html.py
-Usage: ./markdown2html.py README.md README.html
-guillaume@vagrant:~/$ echo $?
-1
-guillaume@vagrant:~/$
-guillaume@vagrant:~/$ ./markdown2html.py README.md README.html 
-Missing README.md
-guillaume@vagrant:~/$ echo $?
-1
-guillaume@vagrant:~/$
-guillaume@vagrant:~/$ echo "Test" > README.md
-guillaume@vagrant:~/$ ./markdown2html.py README.md README.html 
-guillaume@vagrant:~/$ 
-Repo:
+        <link href="0-styles.css" media="all" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <ul>
+            <li>HTML<span class="icon i-html"></span></li>
+            <li>CSS<span class="icon i-css"></span></li>
+            <li>JavaScript<span class="icon i-js"></span></li>
+        </ul>
+    </body>
+</html>
+And this image file: 0-sprite.png
 
-GitHub repository: alx-frontend-for-fun
-File: markdown2html.py
- 
-1. Headings
-#advanced
-Improve markdown2html.py by parsing Headings Markdown syntax for generating HTML:
+Create 0-styles.css and generate this layout:
 
-Syntax: (you can assume it will be strictly this syntax)
 
-Markdown	HTML generated
-# Heading level 1	<h1>Heading level 1</h1>
-## Heading level 2	<h2>Heading level 1</h2>
-### Heading level 3	<h3>Heading level 1</h3>
-#### Heading level 4	<h4>Heading level 1</h4>
-##### Heading level 5	<h5>Heading level 1</h5>
-###### Heading level 6	<h6>Heading level 1</h6>
-guillaume@vagrant:~/$ cat README.md
-# My title
-## My title2
-# My title3
-#### My title4
-### My title5
 
-guillaume@vagrant:~/$ ./markdown2html.py README.md README.html 
-guillaume@vagrant:~/$ cat README.html 
-<h1>My title</h1>
-<h2>My title2</h2>
-<h1>My title3</h1>
-<h4>My title4</h4>
-<h3>My title5</h3>
-guillaume@vagrant:~/$ 
-Spacing and new lines between HTML tags don’t need to be exactly this one
+You are not allowed to change the image and the HTML - sprite is cool!
 
 Repo:
 
 GitHub repository: alx-frontend-for-fun
-File: markdown2html.py
- 
-2. Unordered listing
+File: 0-styles.css
+1. Move the (under)line
 #advanced
-Improve markdown2html.py by parsing Unordered listing syntax for generating HTML:
+By using this HTML:
 
-Syntax: (you can assume it will be strictly this syntax)
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>HBTN - 1- Underline</title>
 
-Markdown:
+        <link href="1-styles.css" media="all" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <h2>
+            Hello <a href="https://www.holbertonschool.com">Holberton!</a>
+        </h2>
+    </body>
+</html>
+Create 1-styles.css and generate this layout where the underline is hidden by default and appeared slowly…:
 
-- Hello
-- Bye
-HTML generated:
 
-<ul>
-    <li>Hello</li>
-    <li>Bye</li>
-</ul>
-guillaume@vagrant:~/$ cat README.md
-# My title
-- Hello
-- Bye
 
-guillaume@vagrant:~/$ ./markdown2html.py README.md README.html 
-guillaume@vagrant:~/$ cat README.html 
-<h1>My title</h1>
-<ul>
-<li>Hello</li>
-<li>Bye</li>
-</ul>
-guillaume@vagrant:~/$ 
-Spacing and new lines between HTML tags don’t need to be exactly this one
+You are not allowed to change the HTML
 
 Repo:
 
 GitHub repository: alx-frontend-for-fun
-File: markdown2html.py
- 
-3. Ordered listing
+File: 1-styles.css
+2. Toggle
 #advanced
-Improve markdown2html.py by parsing Ordered listing syntax for generating HTML:
+By using this HTML:
 
-Syntax: (you can assume it will be strictly this syntax)
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>HBTN - 2- toggle</title>
 
-Markdown:
+        <link href="2-styles.css" media="all" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div class="toggle">
+            <input type="checkbox" name="toggle" class="toggle-cb" id="toggle-0" checked>
+            <label class="toggle-label" for="toggle-0">
+                <div class="toggle-inner"></div>
+                <div class="toggle-switch"></div>
+            </label>
+        </div>
+    </body>
+</html>
+Create 2-styles.css and generate this layout where the <input> is has this custom toggle layout:
 
-* Hello
-* Bye
-HTML generated:
+Checked:
 
-<ol>
-    <li>Hello</li>
-    <li>Bye</li>
-</ol>
-guillaume@vagrant:~/$ cat README.md
-# My title
-* Hello
-* Bye
 
-guillaume@vagrant:~/$ ./markdown2html.py README.md README.html 
-guillaume@vagrant:~/$ cat README.html 
-<h1>My title</h1>
-<ol>
-<li>Hello</li>
-<li>Bye</li>
-</ol>
-guillaume@vagrant:~/$ 
-Spacing and new lines between HTML tags don’t need to be exactly this one
+
+Unchecked:
+
+
+
+You are not allowed to change the HTML
 
 Repo:
 
 GitHub repository: alx-frontend-for-fun
-File: markdown2html.py
- 
-4. Simple text
+File: 2-styles.css
+3. Menu
 #advanced
-Improve markdown2html.py by parsing paragraph syntax for generating HTML:
+By using this HTML:
 
-Syntax: (you can assume it will be strictly this syntax)
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>HBTN - 2- toggle</title>
 
-Markdown:
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="3-styles.css" media="all" rel="stylesheet" type="text/css">
+    </head>
+    <body>
 
-Hello
+        <nav class="menu">
+            <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
+            <label class="menu-open-button" for="menu-open">
+                <span class="menu-line menu-line-1"></span>
+                <span class="menu-line menu-line-2"></span>
+                <span class="menu-line menu-line-3"></span>
+            </label>
 
-I'm a text
-with 2 lines
-HTML generated:
+            <a href="#" class="menu-item"> <i class="fa fa-area-chart"></i> </a>
+            <a href="#" class="menu-item"> <i class="fa fa-bar-chart"></i> </a>
+            <a href="#" class="menu-item"> <i class="fa fa-line-chart"></i> </a>
+            <a href="#" class="menu-item"> <i class="fa fa-pie-chart"></i> </a>
+            <a href="#" class="menu-item"> <i class="fa fa-table"></i> </a>
+        </nav>
 
-<p>
-    Hello
-</p>
-<p>
-    I'm a text
-        <br />
-    with 2 lines
-</p>
-guillaume@vagrant:~/$ cat README.md
-# My title
-- Hello
-- Bye
+    </body>
+</html>
+Create 3-styles.css and generate this layout/animation:
 
-Hello
 
-I'm a text
-with 2 lines
 
-guillaume@vagrant:~/$ ./markdown2html.py README.md README.html 
-guillaume@vagrant:~/$ cat README.html 
-<h1>My title</h1>
-<ul>
-<li>Hello</li>
-<li>Bye</li>
-</ul>
-<p>
-Hello
-</p>
-<p>
-I'm a text
-<br/>
-with 2 lines
-</p>
-guillaume@vagrant:~/$ 
-Spacing and new lines between HTML tags don’t need to be exactly this one
+You are not allowed to change the HTML
 
 Repo:
 
 GitHub repository: alx-frontend-for-fun
-File: markdown2html.py
- 
-5. Bold and emphasis text
-#advanced
-Improve markdown2html.py by parsing bold syntax for generating HTML:
-
-Syntax: (you can assume it will be strictly this syntax)
-
-Markdown	HTML generated
-**Hello**	<b>Hello</b>
-__Hello__	<em>Hello</em>
-guillaume@vagrant:~/$ cat README.md
-# My title
-- He**l**lo
-- Bye
-
-Hello
-
-I'm **a** text
-with __2 lines__
-
-**Or in bold**
-
-guillaume@vagrant:~/$ ./markdown2html.py README.md README.html 
-guillaume@vagrant:~/$ cat README.html 
-<h1>My title</h1>
-<ul>
-<li>He<b>l</b>lo</li>
-<li>Bye</li>
-</ul>
-<p>
-Hello
-</p>
-<p>
-I'm <b>a</b> text
-<br/>
-with <em>2 lines</em>
-</p>
-<p>
-<b>Or in bold</b>
-</p>
-guillaume@vagrant:~/$ 
-Spacing and new lines between HTML tags don’t need to be exactly this one
-
-Repo:
-
-GitHub repository: alx-frontend-for-fun
-File: markdown2html.py
- 
-6. ... but why??
-#advanced
-Improve markdown2html.py by parsing bold syntax for generating HTML:
-
-Syntax: (you can assume it will be strictly this syntax)
-
-Markdown	HTML generated	description
-[[Hello]]	8b1a9953c4611296a827abf8c47804d7	convert in MD5 (lowercase) the content
-((Hello Chicago))	Hello hiago	remove all c (case insensitive) from the content
-guillaume@vagrant:~/$ cat README.md
-# My title
-- He**l**lo
-- Bye
-
-Hello
-
-I'm **a** text
-with __2 lines__
-
-((I will live in Caracas))
-
-But it's [[private]]
-
-So cool!
-
-guillaume@vagrant:~/$ ./markdown2html.py README.md README.html 
-guillaume@vagrant:~/$ cat README.html 
-<h1>My title</h1>
-<ul>
-<li>He<b>l</b>lo</li>
-<li>Bye</li>
-</ul>
-<p>
-Hello
-</p>
-<p>
-I'm <b>a</b> text
-<br/>
-with <em>2 lines</em>
-</p>
-<p>
-I will live in araas
-</p>
-<p>
-But it's 2c17c6393771ee3048ae34d6b380c5ec
-</p>
-<p>
-So cool!
-</p>
-guillaume@vagrant:~/$ 
-Spacing and new lines between HTML tags don’t need to be exactly this one
-
-Repo:
-
-GitHub repository: alx-frontend-for-fun
-File: markdown2html.py
-  
+File: 3-styles.css
